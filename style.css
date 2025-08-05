@@ -43,7 +43,7 @@ p{
     margin: 40px 0;
 }
 
-button {
+button.normal{
     font-size: 14px;
     font-weight: 700;
     padding: 20px 30px;
@@ -154,6 +154,7 @@ body{
 }
 #feature .fe-box:hover{
     box-shadow: 20px 20px 54px rgb(255, 255, 255);
+    transform: scale(1.05);
 }
 
 #feature .fe-box img{
@@ -202,12 +203,13 @@ body{
     cursor: pointer;
     box-shadow: 0px 1px 13px -1px;
     margin: 15px 0;
-    transition: 0.1s ease-in-out;
     position: relative;
+    transition: all 0.3s;
 }
 
 #product1 .pro:hover{
     box-shadow: 2px 2px 2px 2px rgb(238, 87, 87);
+    transform: scale(1.05);
 }
 
 
@@ -278,4 +280,11 @@ body{
 
 #banner h2 span{
     color: red;
+}
+
+#banner button:hover{
+    background: #a62e2efd;
+    color: #ffffff;
+    transition: all 0.5s;
+   transform: scale(1.05);
 }
