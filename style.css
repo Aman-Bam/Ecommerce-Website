@@ -57,6 +57,20 @@ button.normal{
 
 }
 
+button.white{
+    font-size: 13px;
+    font-weight: 600;
+    padding: 23px 23px;
+    color: #000;
+    background-color: #fff;
+    border-radius: 40px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    transition: 0.2;
+
+}
+
 body{
     width: 100%;
 }
@@ -143,7 +157,7 @@ body{
     justify-content: space-between;
     flex-wrap: wrap;
 }
-#feature .fe-box{
+#feature .fe-box {
     width: 180px;
     text-align: center;
     padding: 25px 15px;
@@ -151,10 +165,15 @@ body{
     border: 1px solid #cce7d0;
     border-radius: 4px;
     margin: 15px 0;
+    transition: all 0.4s ease-in-out;
+    transform: scale(1);
+    cursor: pointer;
 }
-#feature .fe-box:hover{
-    box-shadow: 20px 20px 54px rgb(255, 255, 255);
-    transform: scale(1.05);
+
+#feature .fe-box:hover {
+    box-shadow: 20px 20px 54px rgba(255, 255, 255, 0.8);
+    transform: scale(1.05) translateY(-5px);
+    border-color: #a8d5ba;
 }
 
 #feature .fe-box img{
@@ -194,7 +213,52 @@ body{
 #product1{
     text-align: center;
 }
-#product1 .pro{
+
+
+#product1 .pro {
+    width: 23%;
+    min-width: 250px;
+    padding: 10px 12px;
+    border: 1px solid #cce7d0;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.08);
+    margin: 15px 0;
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transform: scale(1) translateY(0);
+    background: linear-gradient(145deg, #ffffff, #f8f9fa);
+    overflow: hidden;
+}
+
+#product1 .pro::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    transition: left 0.6s ease-in-out;
+}
+
+#product1 .pro:hover::before {
+    left: 100%;
+}
+
+#product1 .pro:hover {
+    box-shadow: 0px 15px 35px rgba(238, 87, 87, 0.3), 
+                0px 5px 15px rgba(0, 0, 0, 0.1);
+    transform: scale(1.05) translateY(-8px);
+    border-color: rgba(238, 87, 87, 0.4);
+    background: linear-gradient(145deg, #ffffff, #fdfdfd);
+}
+
+#product1 .pro:active {
+    transform: scale(1.02) translateY(-3px);
+    transition: all 0.15s ease-out;
+}
+/* #product1 .pro{
     width: 23%;
     min-width: 250px;
     padding: 10px 12px;
@@ -204,13 +268,14 @@ body{
     box-shadow: 0px 1px 13px -1px;
     margin: 15px 0;
     position: relative;
-    transition: all 0.3s;
+    transition: all 0.4s ease-in-out;
+    transform: scale(1);
 }
 
 #product1 .pro:hover{
     box-shadow: 2px 2px 2px 2px rgb(238, 87, 87);
-    transform: scale(1.05);
-}
+    transform: scale(1.05) translateY(-5px);
+} */
 
 
 #product1 .pro img{
@@ -282,9 +347,366 @@ body{
     color: red;
 }
 
-#banner button:hover{
+ /* ai bhai sahab */
+#banner button {
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transform: scale(1);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(166, 46, 46, 0.2);
+}
+
+#banner button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.6s ease-out;
+}
+
+#banner button:hover::before {
+    left: 100%;
+}
+
+#banner button:hover {
+    background: linear-gradient(135deg, #a62e2e, #8b2525);
+    color: #ffffff;
+    transform: scale(1.08) translateY(-2px);
+    box-shadow: 0 8px 25px rgba(166, 46, 46, 0.4),
+                0 4px 10px rgba(0, 0, 0, 0.1);
+    border-color: #8b2525;
+}
+
+#banner button:active {
+    transform: scale(1.02) translateY(0px);
+    transition: all 0.1s ease-out;
+    box-shadow: 0 4px 15px rgba(166, 46, 46, 0.3);
+}
+
+#banner button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(166, 46, 46, 0.3);
+}
+/* #banner button:hover{
     background: #a62e2efd;
     color: #ffffff;
     transition: all 0.5s;
    transform: scale(1.05);
+} */
+
+#sm-banner{
+    display: flex;
+    justify-content: space-between;
+    flex-flow: wrap;
+}
+
+/* Container to limit max width and center content */
+#sm-banner {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 0 20px;
+    max-width: 1400px; /* Limits container width */
+    margin: 0 auto; /* Centers the container */
+}
+
+#sm-banner .banner-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    background-image: url(img/banner/b17.jpg);
+    width: 100%;
+    max-width: 580px;
+    height: 50vh;
+    background-size: cover;
+    background-position: center;
+    padding: 30px;
+    margin: 10px;
+    flex: 1;
+}
+
+#sm-banner .banner-box2 {
+    background-image: url(img/banner/b10.jpg);
+}
+
+/* Large screen optimization */
+@media (min-width: 1400px) {
+    #sm-banner {
+        max-width: 1200px; /* Tighter container on very large screens */
+        gap: 30px;
+    }
+    
+    #sm-banner .banner-box {
+        max-width: 560px; /* Prevent boxes from getting too wide */
+        margin: 15px 10px; /* Reduce individual margins */
+    }
+}
+
+@media (min-width: 1600px) {
+    #sm-banner {
+        max-width: 1300px; /* Even tighter for ultra-wide screens */
+    }
+    
+    #sm-banner .banner-box {
+        max-width: 600px;
+        margin: 20px 15px; /* Controlled margins */
+    }
+}
+
+/* Your existing responsive code */
+@media (max-width: 1200px) {
+    #sm-banner .banner-box {
+        max-width: 45%;
+        padding: 25px;
+    }
+}
+
+@media (max-width: 768px) {
+    #sm-banner .banner-box {
+        max-width: 100%;
+        height: 40vh;
+        padding: 20px;
+        margin: 10px 0;
+    }
+    
+    #sm-banner {
+        flex-direction: column;
+        padding: 0 15px;
+    }
+}
+/* #sm-banner .banner-box{
+     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    background-image: url(img/banner/b17.jpg);
+    width: 580px;
+    height: 50vh;
+    background-size: cover;
+    padding: 30px;
+    margin: 10px;
+}
+
+#sm-banner .banner-box2{
+    background-image: url(img/banner/b10.jpg);
+} */
+
+#sm-banner h4{
+    color: white;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+#sm-banner h2{
+    color: #fff;
+    font-size: 28px;
+    font-weight: 800;
+}
+
+#sm-banner span{
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    padding-bottom: 15px;
+}
+
+
+#sm-banner .banner-box button {
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transform: scale(1);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 3px 12px rgba(200, 220, 255, 0.2);
+}
+
+#sm-banner .banner-box button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.6s ease-out;
+}
+
+#sm-banner .banner-box button:hover::before {
+    left: 100%;
+}
+
+#sm-banner .banner-box button:hover {
+    background: linear-gradient(135deg, rgb(200, 220, 255), rgb(180, 210, 250));
+    transform: scale(1.08) translateY(-3px);
+    box-shadow: 0 8px 20px rgba(200, 220, 255, 0.4),
+                0 4px 8px rgba(0, 0, 0, 0.05);
+    border-color: rgb(180, 210, 250);
+}
+
+#sm-banner .banner-box button:active {
+    transform: scale(1.03) translateY(-1px);
+    transition: all 0.15s ease-out;
+    box-shadow: 0 4px 12px rgba(200, 220, 255, 0.3);
+}
+
+#sm-banner .banner-box button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(200, 220, 255, 0.4);
+}
+/* #sm-banner .banner-box button:hover{
+    background: rgb(200, 220, 255);
+    transition: all 0.5s;
+    transform: scale(1.05);
+} */
+
+#banner3 {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 0 80px;
+}
+#banner3 .banner-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    background-image: url(img/banner/b7.jpg);
+    min-width: 30%;
+    height: 30vh;
+    background-size: cover;
+    background-position: center;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+#banner3 h2{
+    color: #ffffff;
+    font-weight: 900;
+    font-style: 22px;
+}
+#banner3 h3{
+    color: #ff0000;
+    font-weight: 800;
+    font-style: 15px;
+}
+
+#banner3 .banner-box2{
+     background-image: url(img/banner/b4.jpg);   
+}
+#banner3 .banner-box3{
+     background-image: url(img/banner/b18.jpg);   
+}
+
+#newslatter{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    background-image: url(img/banner/b14.png);
+    background-repeat: no-repeat;
+    background-position: 20% 30%;
+    background-color: #041e42;
+}
+
+#newslatter h4{
+    font-size: 22px;
+    font-weight: 700;
+    color: #ffffff;
+}
+#newslatter p{
+    font-size: 14px;
+    font-weight: 600;
+    color: #818ea0;
+}
+#newslatter span{
+    color: #eaff00;
+}
+
+#newslatter .form{
+    display: flex;
+    width: 40%;
+}
+
+#newslatter input{
+    height: 3.125rem;
+    padding: 0 1.25em;
+    font-size: 14px;
+    width: 100%;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    outline: none;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+#newslatter button{
+    background-color: #088178;
+    color: #ffffff;
+    white-space: nowrap;
+    border-radius: 0;
+    padding: 10px 28px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+footer .col{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+footer .logo{
+    margin-bottom: 30px;
+}
+
+footer h4{
+    font-style: 14px;
+    padding-bottom: 20px;
+}
+
+footer p{
+    font-size: 14px;
+    margin: 0   0   8px 0;
+}
+footer a{
+    font-size: 13px;
+    text-decoration: none;
+    color: #222;
+    margin-bottom: 10px;
+}
+footer .follow{
+    margin-top: 20px;
+}
+
+footer .follow i{
+    color: #465b53;
+    padding-right: 4px;
+    cursor: pointer;
+}
+
+footer .install .row img{
+    border: 1px solid #088178;
+    border-radius: 6px;
+}
+
+
+footer .install img{
+    margin: 10px 0 15px 0;
+}
+
+footer .follow i:hover,
+footer a:hover{
+    color: #006715;
+}
+
+footer .copyright{
+    width: 100%;
+    text-align: center;
 }
